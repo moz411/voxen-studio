@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Voxen Studio</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header><strong>◈ Voxen Studio</strong><span>GLSL ES 3.0 · WebGL2 · local-first</span><span id="status">Initializing</span></header>
+<main>
+ <section class="editor">
+  <div class="toolbar"><select id="presets" aria-label="Shader presets"></select><button id="new">New</button><button id="save">Save locally</button><button id="import">Import</button><button id="export">Export</button><input id="file" type="file" accept=".json,.glsl,.frag,.txt" hidden></div>
+  <label for="source">Fragment shader</label>
+  <textarea id="source" spellcheck="false" autocapitalize="off" autocomplete="off" aria-label="GLSL source"></textarea>
+  <pre id="errors" role="status"></pre>
+ </section>
+ <section class="preview">
+  <div class="toolbar"><label>Time <input id="speed" type="range" min="0" max="3" step=".1" value="1"><output id="speed-value">1.0×</output></label><button id="pause">Pause</button><button id="reset">Reset time</button></div>
+  <canvas id="canvas"></canvas>
+  <div class="hint">Live preview · Last valid shader remains visible on compile failure · No server-side storage</div>
+ </section>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
